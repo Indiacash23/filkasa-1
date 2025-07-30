@@ -4,7 +4,7 @@ const PORT = process.env.PORT;
 const app = express();
 app.use(express.json());
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://www.instantcash-ind.com");
+  res.header("Access-Control-Allow-Origin", "https://www.filkasa.com");
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, PATCH");
   res.header(
     "Access-Control-Allow-Headers",
@@ -13,8 +13,8 @@ app.use(function (req, res, next) {
   next();
 });
 
-const token = '5d5ea34aa57a25caf974a351dbfd275538dcbbd2277a94b839d8e67e164f34cd';
-const collectionId = '681e1e483b0faaf2ec1eeea7';
+const token = 'ec6a04c5c5706a27dd495835c0674384516113708108312b4dae2dc5416a6606';
+const collectionId = '688a9280776a552828ffc7cc';
 
 app.post('/order', async (req, res) => {
   const formData = req.body;
