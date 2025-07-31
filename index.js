@@ -4,7 +4,7 @@ const PORT = process.env.PORT;
 const app = express();
 app.use(express.json());
 app.use(function (req, res, next) {
- res.header("Access-Control-Allow-Origin", "https://www.hontetech.com");
+  res.header("Access-Control-Allow-Origin", "https://www.filkasa.com");
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, PATCH");
   res.header(
     "Access-Control-Allow-Headers",
@@ -13,7 +13,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-const token = '53bf0bb40cc76370f46b1878c143ac7faff1437d869ac4d259d0543b8ece9377';
+const token = '2594efa3cb231bce8e1954322be26d60931b43a4d5e3e77f0cee6b872248c603';
 const collectionId = '686307e32d2662d05ca772ae';
 app.post('/order', async (req, res) => {
   const formData = req.body;
