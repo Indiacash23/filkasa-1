@@ -4,7 +4,7 @@ const PORT = process.env.PORT;
 const app = express();
 app.use(express.json());
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://www.filkasa.com");
+res.header("Access-Control-Allow-Origin", "https://www.filkasa.com");
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, PATCH");
   res.header(
     "Access-Control-Allow-Headers",
@@ -13,8 +13,8 @@ app.use(function (req, res, next) {
   next();
 });
 
-const token = '2cbfc903b5e4d6ca508660248e82486874e236b9e7c26581f216c0bf5ab936ee';
-const collectionId = '688a427dcde342a082550864';
+const token = '2594efa3cb231bce8e1954322be26d60931b43a4d5e3e77f0cee6b872248c603';
+const collectionId = '688a9280776a552828ffc7cc';
 app.post('/order', async (req, res) => {
   const formData = req.body;
   const phoneFull = formData.Phone_full.replace(/\s+/g, '');
