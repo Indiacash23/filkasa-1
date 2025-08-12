@@ -81,7 +81,10 @@ app.post('/order', async (req, res) => {
             city: formData["City"],
             language: formData["Language"],
             sum: formData["Sum"],
-            "the-request-has-been-processed": false,
+            'switch-green': false,
+            'switch-yellow': false,
+            'switch-red': false,
+            'switch-black': false,
             messenger: formData["Messenger"],
             "phone-number-or-nickname-in-messenger": formData["Nick"],
             status: "61da663c1046e1c2a962dd15679ce3b1",
@@ -162,7 +165,10 @@ app.post('/save', async (req, res) => {
   const formData = req.body;
   const phoneFull = formData.phone.replace(/\s+/g, '');
   const statusText = formData.statusText;
-  const isActive = formData.isActive;
+  const isActiveG = formData.isActiveG;
+  const isActiveY = formData.isActiveY;
+  const isActiveR = formData.isActiveR;
+  const isActiveB = formData.isActiveB;
   const headers = {
     accept: 'application/json',
     authorization: `Bearer ${token}`,
@@ -201,7 +207,10 @@ app.post('/save', async (req, res) => {
             name: phoneFull,
             slug: phoneFull.replace(/\+/g, ''),
             status: statusText,
-            'the-request-has-been-processed': isActive,
+            'switch-green': isActiveG,
+           'switch-yellow': isActiveY,
+           'switch-red': isActiveR,
+           'switch-black': isActiveB,
           },
         },
       };
